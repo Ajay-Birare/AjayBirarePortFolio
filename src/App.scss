@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$primaryColor: rgba(242, 236, 236, 0.425);
+$primaryColor2: rgba(242, 236, 236, 0.534);
+$secondaryColor: rgba(71, 123, 201, 0.647);
+$secondaryColor2: rgba(33, 90, 175, 0.227);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: url("/src/assets/MELD.jpeg") center no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(20px);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navbar {
+  // background-color:red;
+  background-color: rgba(242, 236, 236, 0.285);
+  background-color: rgba(242, 236, 236, 0.549);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  align-items: center;
+  border-radius: 10px;
+  // height:10vh;
+}
+
+.container {
+  // height:90vh;
+  display: flex;
+  gap: 20px;
+
+  // flex-wrap:wrap;
+  .sidebar {
+    background-color: $primaryColor;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+
+    // This ensures sidebar doesn't grow or shrink
+    * {
+      padding: .3rem 1.2rem;
+    }
+
+    a {
+      padding: 1rem 2.5rem;
+      text-align: center;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        // border-radius:10px;
+      }
+    }
+
+    a:first-child:hover {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    a:first-child.active {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    a:last-child:hover {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    a:last-child.active {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .active {
+      background-color: rgba(255, 255, 255, 0.396);
+      border: none;
+    }
+  }
+
+  .pagesContainer {
+    background-color: $primaryColor2;
+    flex-grow: 1;
+    // This makes the home div take up remaining space
+    border-radius: 10px;
+    height: 80vh;
+
+    // height:fit-content;
+    .pages {
+      margin: 1rem 2rem;
+
+      // background-color:gray;
+      .profilePic {
+        background-color: rgba(112, 153, 203, 0.567);
+        height: 400px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.home {
+  // background-color:red;
+  margin: 2rem auto;
+  // width:fit-content;
+  // text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+
+  .intro h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .intro {
+    .name {
+      color: rgb(82, 52, 229);
+      // color:blue;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    // background-color:rgb(106,152,221);
+    .hello {
+      animation: rotate 1s infinite linear alternate;
+      color: $secondaryColor2;
+    }
+
+    .connection {
+      display: flex;
+      flex-direction: row;
+
+      a {
+        .icon {
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+
+  b {
+    background-color: $secondaryColor2;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $primaryColor;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 50%;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    // background-color:red;
+    height: fit-content;
+  }
+
+  .skillIcon {
+    font-size: 5rem;
+    background-color: $secondaryColor;
+    color: white;
+    padding: .5rem;
+    border-radius: 10px;
+  }
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  .eduContainer {
+    overflow-y: auto;
+    height: 60vh;
+    // background-color:red;
+  }
+
+  .eduContainer::-webkit-scrollbar {
+    // hide the scrollbar
+    opacity: 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    // background-color:red;
+  }
+
+  .eduDetails {
+    background-color: $secondaryColor2;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+//______________________________________________________________________
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  .projectContainer {
+    overflow-y: auto;
+    height: 60vh;
+    width: 50%;
+  }
+
+  .projectContainer::-webkit-scrollbar {
+    opacity: 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .projectCard {
+    background-color: $secondaryColor2;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+    text-align: center;
+
+    a {
+      background-color: $secondaryColor2;
+      padding: .5rem 2rem;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: $secondaryColor;
+      }
+    }
+  }
+}
+
+
+//______________________________________________________________________
+
+.contact{
+  display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    .contactContainer{
+      display: flex;
+      flex-direction: column;
+      gap:1rem;
+    }
+    .connectionLinks{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      h3{
+        background-color: $secondaryColor2;
+          padding: 1rem 2rem;
+      }
+      a{
+        background-color: $secondaryColor2;
+        padding: 1rem 2rem;
+        width: 100%;
+        &:hover{
+          background-color:$secondaryColor;
+          color: blue;
+        }
+      }     
+    }
+}

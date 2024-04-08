@@ -1,0 +1,19 @@
+.rFLex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
